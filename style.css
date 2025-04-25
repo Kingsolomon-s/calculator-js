@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+body {
+  background-color: darkgray;
+}
+
 .container {
   max-width: 500px;
   width: 336px;
@@ -61,10 +65,12 @@
 
 .orange {
   background-color: #f37d0d;
+  transition: background-color 0.1s ease;
 }
 
 .grey {
   background-color: #b4b0ac;
+  transition: background-color 0.1s ease;
 }
 
 .btn.zero {
@@ -73,7 +79,15 @@
   border-radius: 34px;
 }
 
-.screen .limit {
-  background-color: #ff4d4d;
-  transition: background-color 0.2s ease;
+.dark-grey.digit-blink {
+  background-color: #555;
+  transition: background-color 0.1s ease;
+}
+
+.orange-blink {
+  background-color: #ffbc58;
+}
+
+.grey-blink {
+  background-color: #d0cfc9;
 }
