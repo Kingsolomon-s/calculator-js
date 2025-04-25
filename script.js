@@ -83,11 +83,11 @@ function display(e) {
   } else {
     if (!isOperatorPressed) {
       firstNumber += output;
-      screenPara.textContent += output;
+      appendNumber(output);
       console.log(firstNumber);
     } else {
       secondNumber += output;
-      screenPara.textContent += output;
+      appendNumber(output);
     }
   }
 }
@@ -124,3 +124,9 @@ reset.addEventListener("click", () => {
   isOperatorPressed = false;
   screenPara.textContent = "";
 });
+
+function appendNumber(num) {
+  if (screenPara.textContent.length < 13) {
+    screenPara.textContent += num;
+  }
+}
