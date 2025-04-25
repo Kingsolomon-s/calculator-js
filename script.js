@@ -130,3 +130,36 @@ function appendNumber(num) {
     screenPara.textContent += num;
   }
 }
+
+const digitPressed = document.querySelectorAll(".dark-grey");
+
+digitPressed.forEach((digit) => {
+  digit.addEventListener("click", () => {
+    digit.classList.add("digit-blink");
+    setTimeout(() => {
+      digit.classList.remove("digit-blink");
+    }, 100);
+  });
+});
+
+const orangeBc = document.querySelectorAll(".orange");
+
+orangeBc.forEach((orange) => {
+  orange.addEventListener("click", () => {
+    orange.classList.add("orange-blink");
+    setTimeout(() => {
+      orange.classList.remove("orange-blink");
+    }, 100);
+  });
+});
+
+const greyBc = document.querySelectorAll(".grey");
+
+greyBc.forEach((grey) => {
+  grey.addEventListener("click", () => {
+    grey.classList.add("grey-blink");
+    setTimeout(() => {
+      grey.classList.remove("grey-blink");
+    }, 100);
+  });
+});
