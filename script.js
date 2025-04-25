@@ -13,6 +13,14 @@ function multiply(a, b) {
 function divide(a, b) {
   return a / b;
 }
+function percent(a, b) {
+  if (a && b !== "") {
+    return (b / 100) * a;
+  } else if (a) {
+    return (1 / 100) * a;
+    console.log((1 / 100) * a);
+  }
+}
 
 let firstNumber = "";
 let secondNumber = "";
@@ -28,6 +36,8 @@ function operate(operator, firstNumber, secondNumber) {
     return multiply(firstNumber, secondNumber);
   } else if (operator === "/") {
     return divide(firstNumber, secondNumber);
+  } else if (operator === "%") {
+    return percent(firstNumber, secondNumber);
   }
 }
 
@@ -54,7 +64,7 @@ function computeResult() {
 function display(e) {
   let output = e.target.innerText;
   console.log(output);
-  //   screenPara.textContent = "";
+
   if (e.target.classList.contains("operator")) {
     if (firstNumber !== "") {
       if (isOperatorPressed) return;
@@ -104,3 +114,13 @@ displayable.forEach((button) => {
 });
 
 equals.addEventListener("click", computeResult);
+
+const reset = document.querySelector(".ac");
+
+reset.addEventListener("click", () => {
+  firstNumber = "";
+  secondNumber = "";
+  operator = "";
+  isOperatorPressed = false;
+  screenPara.textContent = "";
+});
