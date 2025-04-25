@@ -72,3 +72,8 @@
 
   border-radius: 34px;
 }
+
+.screen .limit {
+  background-color: #ff4d4d;
+  transition: background-color 0.2s ease;
+}
