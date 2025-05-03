@@ -52,9 +52,14 @@ const backspace = document.querySelector(".back-space");
 function computeResult() {
   if (firstNumber && operator && secondNumber) {
     const result = operate(operator, Number(firstNumber), Number(secondNumber));
-    screenPara.textContent = result;
 
-    firstNumber = result.toString();
+    const roundedResult = Number.isInteger(result)
+      ? result
+      : parseFloat(result.toFixed(5));
+
+    screenPara.textContent = roundedResult;
+
+    firstNumber = roundedResult.toString();
     secondNumber = "";
     operator = "";
     isOperatorPressed = false;
