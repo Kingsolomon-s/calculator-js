@@ -53,6 +53,15 @@ function computeResult() {
   if (firstNumber && operator && secondNumber) {
     const result = operate(operator, Number(firstNumber), Number(secondNumber));
 
+    if (!isFinite(result)) {
+      screenPara.textContent = "Error";
+      firstNumber = "";
+      secondNumber = "";
+      operator = "";
+      isOperatorPressed = false;
+      return;
+    }
+
     const roundedResult = Number.isInteger(result)
       ? result
       : parseFloat(result.toFixed(5));
