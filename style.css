@@ -25,10 +25,13 @@ body {
   height: 120px;
   text-align: right;
   user-select: none;
-  font-size: 60px;
+  font-size: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  word-wrap: break-word;
+  word-break: break-all;
+  line-height: 0.8;
 }
 
 .buttons {
