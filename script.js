@@ -77,15 +77,19 @@ function display(e) {
         operator = output;
       }
       isOperatorPressed = true;
-      screenPara.textContent += ` ${operator} `;
+      screenPara.textContent += `${operator}`;
       console.log(operator);
     }
   } else {
     if (!isOperatorPressed) {
+      if (output === "." && firstNumber.includes(".")) return;
+
       firstNumber += output;
       appendNumber(output);
       console.log(firstNumber);
     } else {
+      if (output === "." && secondNumber.includes(".")) return;
+
       secondNumber += output;
       appendNumber(output);
     }
@@ -99,13 +103,13 @@ backspace.addEventListener("click", () => {
   if (isOperatorPressed && secondNumber !== "") {
     secondNumber = secondNumber.slice(0, -1);
     screenPara.textContent = screenText.slice(0, -1);
+  } else if (firstNumber !== "") {
+    firstNumber = firstNumber.slice(0, -1);
+    screenPara.textContent = screenText.slice(0, -1);
   } else if (isOperatorPressed && secondNumber == "") {
     operator = "";
     isOperatorPressed = false;
     screenPara.textContent = screenText.slice(0, -3);
-  } else if (firstNumber !== "") {
-    firstNumber = firstNumber.slice(0, -1);
-    screenPara.textContent = screenText.slice(0, -1);
   }
 });
 
